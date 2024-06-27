@@ -302,10 +302,10 @@ DJCi500.Deck = function (deckNumbers, midiChannel) {
                 1,//((status & 0xF0) !=== 0x80 && value > 0),
                 54);
             } else {
-              engine.toggleControl(deckData.currentDeck, "play");
+              engine.setValue(group, 'play', ! (engine.getValue(group, 'play')))
             }
           } else {
-            engine.toggleControl(deckData.currentDeck, "play");
+            engine.setValue(group, 'play', ! (engine.getValue(group, 'play')))
           }
         }
       };
